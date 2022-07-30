@@ -4,14 +4,14 @@
     z-index: 1;
     /* top: 0; */
     display: flex;
-    height: 30px;
+    /* height: 30px; */
+    height: 5rem;
 }
 
 .topnav {
-    position: fixed;
+    position: relative;
     top: 0;
     width: 100%;
-    /* padding-right: 10px; */
     height: 1.25rem;
     z-index: 1;
     background-color: white;
@@ -50,8 +50,17 @@
     right: 20px;
     /* width: 7rem; */
     object-fit: contain;
+    color: #111;
 }
 
-.li{
-    padding: 5px;
+.ul__menu li{
+    font-size: 1.25rem;
+    /* padding: 0.25rem; */
+    padding-left: 1rem;
+    color: #fff;
+}
+
+.nav_purple{
+    background-color: #352c66;
+    /* height: 7rem; */
 }

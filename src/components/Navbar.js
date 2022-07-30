@@ -1,7 +1,27 @@
-import React from "react";
+import React, {useEffect,useState} from "react";
 import banner from '../img/banner.jpg';
 import '../css/Navbar.css';
+
+
+
 function Navbar(){
+
+    const [show, handleShow] = useState(false);
+
+
+    useEffect(()=>{
+        window.addEventListener('scroll',()=>{
+            if(window.scrollY > 100 ){
+                handleShow(true);
+            }else handleShow(false);
+        })   
+
+
+        return() =>{
+            window.removeEventListener('scroll',null);
+        }
+    },[]);
+
     return(
         <header  className="navheader"
             style={{
@@ -13,7 +33,8 @@ function Navbar(){
             }}
         >   
 
-            <div className="nav">
+            <div className={`nav ${ show?'nav_purple':''}}`}>
+
                 <div className="topnav">
                     <div className="left_items">
                         <span>contact@globalstonepaving.co.uk&nbsp;</span>&nbsp;
@@ -30,12 +51,12 @@ function Navbar(){
                 <div className="navmenu">
                     <img src="logo" alt='globalstone logo'  className="navlogo"/>
                     <ul className="ul__menu">
-                        <li>Collections</li>
-                        <li>Furniture</li>
-                        <li>Accents</li>
-                        <li>Art</li>
-                        <li>Know Us</li>
-                        <li>Login</li>
+                        <li className="list__item">Collections</li>
+                        <li className="list__item">Furniture</li>
+                        <li className="list__item">Accents</li>
+                        <li className="list__item">Art</li>
+                        <li className="list__item">Know Us</li>
+                        <li className="list__item">Login</li>
                     </ul>
                 </div>
             </div>
